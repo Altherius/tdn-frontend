@@ -1,10 +1,26 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import Input from './components/Input.tsx';
 import {Team} from './types/team';
+import TeamTable from './components/TeamTable.tsx';
+import Title from './components/Title.tsx';
 import './App.css'
 
 function App() {
 
   const [teams, setTeams] = useState([]);
+  const [search, setSearch] = useState('');
+
+  const filteredTeams = teams.filter((team: Team) => {
+    if (
+      search && 
+      !team.name.toLowerCase().includes(search) &&
+      !team.region.toLowerCase().includes(search)
+    ) {
+      return false;
+    }
+
+    return true;
+  })
 
   useEffect(() => {
     fetch('http://localhost/api/teams')
@@ -12,33 +28,11 @@ function App() {
     .then((json) => setTeams(json.data));
   }, []);
 
-  const sortByName = () => {
-    setTeams([...teams].sort((a: Team, b: Team) => (a.name > b.name ? 1 : -1)));
-  }
-
-  const sortByRating = () => {
-    setTeams([...teams].sort((a: Team, b: Team) => (b.rating - a.rating)));
-  }
-
   return (
     <>
-      <h1>Tournoi des nations</h1>
-      <table>
-        <thead>
-          <tr>
-            <th onClick={sortByName}>Équipe</th>
-            <th onClick={sortByRating}>Classement</th>
-          </tr>
-        </thead>
-        <tbody>
-          {teams.map((team: Team) => 
-            <tr key={team.id}>
-              <td>{team.name}</td>
-              <td>{team.rating}</td>
-            </tr>
-          )}
-        </tbody>
-      </table>
+      <Title>Tournoi des nations</Title>
+      <Input value={search} placeholder='Rechercher...' onChange={setSearch} />
+      <TeamTable teams={filteredTeams} setTeams={setTeams} />
     </>
   )
 }
