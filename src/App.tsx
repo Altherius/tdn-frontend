@@ -1,33 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useState } from 'react';
+import {Team} from './types/team';
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [teams, setTeams] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost/api/teams')
+    .then(((response) => response.json()))
+    .then((json) => setTeams(json.data));
+  }, []);
+
+  const sortByName = () => {
+    setTeams([...teams].sort((a: Team, b: Team) => (a.name > b.name ? 1 : -1)));
+  }
+
+  const sortByRating = () => {
+    setTeams([...teams].sort((a: Team, b: Team) => (b.rating - a.rating)));
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Tournoi des nations</h1>
+      <table>
+        <thead>
+          <tr>
+            <th onClick={sortByName}>Équipe</th>
+            <th onClick={sortByRating}>Classement</th>
+          </tr>
+        </thead>
+        <tbody>
+          {teams.map((team: Team) => 
+            <tr key={team.id}>
+              <td>{team.name}</td>
+              <td>{team.rating}</td>
+            </tr>
+          )}
+        </tbody>
+      </table>
     </>
   )
 }
