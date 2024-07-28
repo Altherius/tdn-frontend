@@ -2,7 +2,7 @@ import { Game } from '../types/game';
 import GameTableRow from './GameTableRow';
 
 
-export default function GameTable({games, setGames}: {games: Array<Game>; setGames: (games: Array<Game>) => void}) {
+export default function GameTable({games}: {games: Array<Game>}) {
     return <table>
     <thead>
       <tr>

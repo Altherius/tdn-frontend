@@ -2,7 +2,7 @@ import { Team } from '../types/team';
 import TeamTableRow from './TeamTableRow';
 
 
-export default function TeamTable({teams, setTeams}: {teams: Array<Team>; setTeams: Function}) {
+export default function TeamTable({teams, setTeams}: {teams: Array<Team>; setTeams: (teams: Array<Team>) => void}) {
 
     const sortByName = () => {
         setTeams([...teams].sort((a: Team, b: Team) => (a.name > b.name ? 1 : -1)));

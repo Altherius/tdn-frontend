@@ -3,12 +3,14 @@ import Title from '../../components/Title.tsx';
 import Menu from '../../components/Menu.tsx';
 import { useParams } from 'react-router-dom';
 import GameTable from '../../components/GameTable.tsx';
+import { Tournament } from '../../types/tournament.ts';
+import { Game } from '../../types/game.ts';
 
 export default function TeamView() {
 
     const {id} = useParams();
-    const [tournament, setTournament] = useState([]);
-    const [lastGames, setLastGames] = useState([]);
+    const [tournament, setTournament] = useState<Tournament>({id: 0, 'name': ''});
+    const [lastGames, setLastGames] = useState<Array<Game>>([]);
 
   
     useEffect(() => {
@@ -28,7 +30,7 @@ export default function TeamView() {
         <Menu />
         <Title>{tournament.name}</Title>
         <Title>Derniers matchs</Title>
-        <GameTable games={lastGames} setGames={setLastGames} />
+        <GameTable games={lastGames} />
       </>
     )
   }

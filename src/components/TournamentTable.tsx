@@ -2,7 +2,7 @@ import { Tournament } from '../types/tournament';
 import TournamentTableRow from './TournamentTableRow';
 
 
-export default function TournamentTable({tournaments, setTournaments}: {tournaments: Array<Tournament>; setTournaments: (tournaments: Array<Tournament>) => void}) {
+export default function TournamentTable({tournaments}: {tournaments: Array<Tournament>}) {
     return <table>
     <thead>
       <tr>

@@ -4,12 +4,13 @@ import Title from '../../components/Title.tsx';
 import Menu from '../../components/Menu.tsx';
 import { useParams } from 'react-router-dom';
 import GameTable from '../../components/GameTable.tsx';
+import { Game } from '../../types/game.ts';
 
 export default function TeamView() {
 
     const {id} = useParams();
-    const [team, setTeam] = useState([]);
-    const [lastGames, setLastGames] = useState([]);
+    const [team, setTeam] = useState<Team>({id: 0, name: '', rating: 0, region: ''});
+    const [lastGames, setLastGames] = useState<Array<Game>>([]);
 
   
     useEffect(() => {
@@ -23,6 +24,12 @@ export default function TeamView() {
       .then(((response) => response.json()))
       .then((json) => setLastGames(json.data));
     }, [id]);
+
+    useEffect(() => {
+      fetch('http://localhost/api/teams/' + id + '/elo-history')
+      .then(((response) => response.json()))
+      .then((json) => setEloHistory(json.data));
+    }, [id]);
   
     return (
       <>
@@ -30,7 +37,7 @@ export default function TeamView() {
         <Title>{team.name}</Title>
         <p>Classement : {team.rating}</p>
         <Title>Derniers matchs</Title>
-        <GameTable games={lastGames} setGames={setLastGames} />
+        <GameTable games={lastGames} />
       </>
     )
   }

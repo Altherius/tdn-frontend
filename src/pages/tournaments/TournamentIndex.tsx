@@ -7,8 +7,8 @@ import Menu from '../../components/Menu.tsx';
 
 export default function TournamentIndex() {
 
-    const [tournaments, setTournaments] = useState([]);
-    const [search, setSearch] = useState('');
+    const [tournaments, setTournaments] = useState<Array<Tournament>>([]);
+    const [search, setSearch] = useState<string>('');
   
     const filteredTournaments = tournaments.filter((tournament: Tournament) => {
       if (
@@ -32,7 +32,7 @@ export default function TournamentIndex() {
         <Menu />
         <Title>Liste des tournois</Title>
         <Input value={search} placeholder='Rechercher...' onChange={setSearch} />
-        <TournamentTable tournaments={filteredTournaments} setTournaments={setTournaments} />
+        <TournamentTable tournaments={filteredTournaments} />
       </>
     )
   }

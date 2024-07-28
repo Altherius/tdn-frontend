@@ -7,8 +7,8 @@ import Menu from '../../components/Menu.tsx';
 
 export default function TeamIndex() {
 
-    const [teams, setTeams] = useState([]);
-    const [search, setSearch] = useState('');
+    const [teams, setTeams] = useState<Array<Team>>([]);
+    const [search, setSearch] = useState<string>('');
   
     const filteredTeams = teams.filter((team: Team) => {
       if (
