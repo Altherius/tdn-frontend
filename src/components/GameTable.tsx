@@ -8,6 +8,7 @@ export default function GameTable({games}: {games: Array<Game>}) {
       <tr>
         <th>Nom</th>
         <th>Résultat</th>
+        <th>Détails</th>
       </tr>
     </thead>
     <tbody>

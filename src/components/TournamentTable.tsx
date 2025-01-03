@@ -7,6 +7,9 @@ export default function TournamentTable({tournaments}: {tournaments: Array<Tourn
     <thead>
       <tr>
         <th>Nom</th>
+        <th>Vainqueur</th>
+        <th>Finaliste</th>
+        <th>Troisième</th>
       </tr>
     </thead>
     <tbody>
