@@ -11,14 +11,8 @@ export default function TournamentIndex() {
     const [search, setSearch] = useState<string>('');
   
     const filteredTournaments = tournaments.filter((tournament: Tournament) => {
-      if (
-        search && 
-        !tournament.name.toLowerCase().includes(search)
-      ) {
-        return false;
-      }
-  
-      return true;
+      return !(search &&
+          !tournament.name.toLowerCase().includes(search));
     })
   
     useEffect(() => {

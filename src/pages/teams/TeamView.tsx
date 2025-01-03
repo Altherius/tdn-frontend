@@ -5,12 +5,15 @@ import Menu from '../../components/Menu.tsx';
 import { useParams } from 'react-router-dom';
 import GameTable from '../../components/GameTable.tsx';
 import { Game } from '../../types/game.ts';
+import {EloHistoryEntry} from "../../types/elo_history.ts";
+import EloHistoryTable from "../../components/EloHistoryTable.tsx";
 
 export default function TeamView() {
 
     const {id} = useParams();
-    const [team, setTeam] = useState<Team>({id: 0, name: '', rating: 0, region: ''});
+    const [team, setTeam] = useState<Team>();
     const [lastGames, setLastGames] = useState<Array<Game>>([]);
+    const [eloHistory, setEloHistory] = useState<Array<EloHistoryEntry>>([]);
 
   
     useEffect(() => {
@@ -34,10 +37,12 @@ export default function TeamView() {
     return (
       <>
         <Menu />
-        <Title>{team.name}</Title>
-        <p>Classement : {team.rating}</p>
+        <Title>{team ? team.name : ''}</Title>
+        <p>Classement : {team ? team.rating : 0}</p>
         <Title>Derniers matchs</Title>
         <GameTable games={lastGames} />
+          <Title>Historique du classement</Title>
+          <EloHistoryTable eloHistory={eloHistory} />
       </>
     )
   }

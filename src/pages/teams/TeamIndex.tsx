@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 import Input from '../../components/Input.tsx';
 import {Team} from '../../types/team.ts';
 import TeamTable from '../../components/TeamTable.tsx';
@@ -12,23 +12,17 @@ export default function TeamIndex() {
     const [teams, setTeams] = useState<Array<Team>>([]);
     const [games, setGames] = useState<Array<Game>>([]);
     const [search, setSearch] = useState<string>('');
-  
+
     const filteredTeams = teams.filter((team: Team) => {
-      if (
-        search && 
-        !team.name.toLowerCase().includes(search) &&
-        !team.region.toLowerCase().includes(search)
-      ) {
-        return false;
-      }
-  
-      return true;
+        return !(search &&
+            !team.name.toLowerCase().includes(search) &&
+            !team.region.toLowerCase().includes(search));
     })
-  
+
     useEffect(() => {
-      fetch('http://localhost/api/teams')
-      .then(((response) => response.json()))
-      .then((json) => setTeams(json.data));
+        fetch('http://localhost/api/teams')
+            .then(((response) => response.json()))
+            .then((json) => setTeams(json.data));
     }, []);
 
     useEffect(() => {
@@ -36,15 +30,15 @@ export default function TeamIndex() {
             .then(((response) => response.json()))
             .then((json) => setGames(json.data));
     }, []);
-  
+
     return (
-      <>
-        <Menu />
-        <Title>Derniers matchs</Title>
-          <GameCardGrid games={games} />
-        <Title>Classement des pays</Title>
-        <Input value={search} placeholder='Rechercher...' onChange={setSearch} />
-        <TeamTable teams={filteredTeams} setTeams={setTeams} />
-      </>
+        <>
+            <Menu/>
+            <Title>Derniers matchs</Title>
+            <GameCardGrid games={games}/>
+            <Title>Classement des pays</Title>
+            <Input value={search} placeholder='Rechercher...' onChange={setSearch}/>
+            <TeamTable teams={filteredTeams} setTeams={setTeams}/>
+        </>
     )
-  }
+}

@@ -9,7 +9,7 @@ import { Game } from '../../types/game.ts';
 export default function TeamView() {
 
     const {id} = useParams();
-    const [tournament, setTournament] = useState<Tournament>({id: 0, 'name': ''});
+    const [tournament, setTournament] = useState<Tournament>();
     const [lastGames, setLastGames] = useState<Array<Game>>([]);
 
   
@@ -28,7 +28,7 @@ export default function TeamView() {
     return (
       <>
         <Menu />
-        <Title>{tournament.name}</Title>
+        <Title>{tournament ? tournament.name : ''}</Title>
         <Title>Derniers matchs</Title>
         <GameTable games={lastGames} />
       </>
