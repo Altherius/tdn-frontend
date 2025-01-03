@@ -17,7 +17,10 @@ export default function TeamTable({teams, setTeams}: {teams: Array<Team>; setTea
       <tr>
         <th onClick={sortByName}>Équipe</th>
         <th>Région</th>
-        <th onClick={sortByRating}>Classement</th>
+        <th onClick={sortByRating}>Elo</th>
+        <th>Résultats matchs</th>
+        <th>Progression Elo</th>
+        <th>Derniers matchs</th>
       </tr>
     </thead>
     <tbody>
