@@ -1,7 +1,6 @@
 import {useEffect, useState} from "react";
 import {Team} from "../../types/team.ts";
 import {Tournament} from "../../types/tournament.ts";
-import GameCard from "../../components/GameCard.tsx";
 
 export default function GameNew() {
 
@@ -39,9 +38,9 @@ export default function GameNew() {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                hostingTeamId: hostingTeam.id,
-                receivingTeamId: receivingTeam.id,
-                tournamentId: tournament.id,
+                hostingTeamId: hostingTeam ? hostingTeam.id : 0,
+                receivingTeamId: receivingTeam ? receivingTeam.id : 0,
+                tournamentId: tournament ? tournament.id : 0,
                 hostScore1: hostingTeamScore1,
                 guestScore1: receivingTeamScore1,
                 hostScore2: hostingTeamScore2,
