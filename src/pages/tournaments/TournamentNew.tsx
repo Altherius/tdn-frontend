@@ -1,4 +1,5 @@
 import {useState} from "react";
+import Menu from "../../components/Menu.tsx";
 
 export default function TournamentNew() {
 
@@ -28,6 +29,8 @@ export default function TournamentNew() {
 
     return (
         <div>
+
+            <Menu />
             <h1>Création de tournoi</h1>
 
             <div>

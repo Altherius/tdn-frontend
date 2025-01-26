@@ -5,6 +5,10 @@ export default function Menu() {
         <ul>
             <li><NavLink to="/">Classement</NavLink></li>
             <li><NavLink to="/tournaments">Tournois</NavLink></li>
+            <ul>
+                <li><NavLink to="/tournaments/new">Créer un tournoi</NavLink></li>
+            </ul>
+            <li><NavLink to="/games/new">Créer un match</NavLink></li>
         </ul>
     </nav>
 }

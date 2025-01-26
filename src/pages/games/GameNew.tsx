@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {Team} from "../../types/team.ts";
 import {Tournament} from "../../types/tournament.ts";
+import Menu from "../../components/Menu.tsx";
 
 export default function GameNew() {
 
@@ -52,6 +53,7 @@ export default function GameNew() {
 
     return (
         <div>
+            <Menu />
             <h1>Créer un match</h1>
             <h2>Match</h2>
 
