@@ -1,0 +1,30 @@
+@import "/src/assets/style/variables.css";
+
+.menu {
+  background-color: var(--color-primary-light);
+  border-bottom: 1px solid black;
+  height: 65px;
+  overflow: clip;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 25px;
+
+  .menu__title {
+    box-sizing: border-box;
+    background-color: var(--color-primary-light);
+    padding: 20px 20px;
+    font-size: 24px;
+    color: var(--color-text);
+
+    border-right: 5px solid var(--color-primary-dark);
+    border-radius: 35px;
+  }
+  .menu__item {
+    background-color: var(--color-primary-light);
+    color: var(--color-text);
+    font-size: 20px;
+  }
+}
