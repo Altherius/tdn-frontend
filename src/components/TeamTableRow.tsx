@@ -1,12 +1,13 @@
 import { Team } from "../types/team";
 import { Link } from "react-router-dom";
 import { GameResult } from "../types/last_result.ts";
+import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 export default function TeamTableRow({ team, id }: { team: Team; id: number }) {
   return (
     <tr className={`tableRow ${id % 2 == 0 ? "tableRow--even" : ""}`}>
       <td className="tableRow__cell">
-        <Link to={"/teams/" + team.id}>{team.name}</Link>
+        <Link to={"/teams/" + team.id}><span className={`fi fi-${team.countryCode.toLowerCase()}`}></span>{team.name}</Link>
       </td>
       <td className="tableRow__cell">{team.region}</td>
       <td className="tableRow__cell">{team.rating}</td>

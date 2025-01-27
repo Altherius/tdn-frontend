@@ -30,8 +30,21 @@
         font-size: 20px;
         width: 110%;
     }
+    .gameCard__result{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
     .gameCard__score {
         color: var(--color-text);
         font-size: 20px;
+    }
+
+    .fi {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
     }
 }

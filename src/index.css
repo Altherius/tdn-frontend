@@ -103,4 +103,11 @@ main{
   font-size: 20px;
   padding: 10px;
   width: 300px;
+  height: 20px;
+}
+
+.fi {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
 }
