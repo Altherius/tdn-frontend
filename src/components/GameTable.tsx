@@ -12,8 +12,8 @@ export default function GameTable({games}: { games: Array<Game> }) {
         </tr>
         </thead>
         <tbody>
-        {games.map((game: Game, index) =>
-            <GameTableRow key={game.id} game={game} id={index}/>
+        {games.map((game: Game) =>
+            <GameTableRow key={game.id} game={game} />
         )}
         </tbody>
     </table>

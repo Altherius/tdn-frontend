@@ -1,10 +1,10 @@
-@import '/src/assets/style/variables.css';
+@import "/src/assets/style/variables.css";
 
 * {
   color: #fff;
   margin: 0;
   padding: 0;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 a {
@@ -12,22 +12,21 @@ a {
   text-decoration: none;
 }
 
-  .text-win{
-    color: var(--color-green);
-  }
-  .text-draw{
-    color: var(--color-yellow);
-  }
-  .text-loss{
-    color: var(--color-red);
-  }
-
+.text-win {
+  color: var(--color-green);
+}
+.text-draw {
+  color: var(--color-yellow);
+}
+.text-loss {
+  color: var(--color-red);
+}
 
 body {
   background-color: var(--color-primary-dark);
 }
 
-main{
+main {
   display: flex;
   justify-content: center;
   background-color: var(--color-primary);
@@ -42,17 +41,17 @@ main{
   padding: 0 35px;
 }
 
-.sectionTitle{
+.sectionTitle {
   font-size: 30px;
   font-weight: bold;
   text-align: center;
   padding-bottom: 20px;
   width: 35%;
   border-bottom: 2px solid #fff;
-  margin:35px 10px;
+  margin: 35px 10px;
 }
 
-.tableFrame{
+.tableFrame {
   background-color: var(--color-secondary-dark);
   border: 2px solid var(--color-secondary-dark);
   border-radius: 5px 5px 0 0;
@@ -62,40 +61,57 @@ main{
   margin-bottom: 100px;
 }
 
-.tableHeader{
+.tableHeader {
   background-color: var(--color-secondary-dark);
   height: 65px;
 
-  .tableHeader__cell{
+  .tableHeader__cell {
     font-size: 20px;
     text-align: left;
     padding: 10px;
     border-left: 2px solid black;
-    &:first-child{
+    &:first-child {
       border-left: 0px;
     }
   }
 }
 
-.tableRow{
+.tableRow {
   background-color: var(--color-primary-light);
   border-bottom: 1px solid var(--color-secondary-dark);
-  &.tableRow--even{
+  &:nth-child(even) {
     background-color: var(--color-primary);
   }
-  .tableRow__cell{
+  .tableRow__cell {
     text-align: left;
     padding: 15px;
+    width: fit-content;
     border-left: 2px solid black;
-    &:first-child{
+    &:first-child {
       border-left: 0px;
+    }
+     /* Will move to a dedicated file */
+    & .result {
+      display: inline-block;
+      margin-right: 10px;
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      &.result-win {
+        background-color: var(--color-green);
+      }
+      &.result-draw {
+        background-color: var(--color-yellow);
+      }
+      &.result-loss {
+        background-color: var(--color-red);
+      }
     }
   }
 }
 
-
-.input{
-  align-self:flex-start;
+.input {
+  align-self: flex-start;
   background-color: #fff;
   color: black;
   border: 2px solid var(--color-primary);
@@ -104,10 +120,4 @@ main{
   padding: 10px;
   width: 300px;
   height: 20px;
-}
-
-.fi {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
 }

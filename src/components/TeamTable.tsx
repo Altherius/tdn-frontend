@@ -24,8 +24,8 @@ export default function TeamTable({teams, setTeams}: {teams: Array<Team>; setTea
       </tr>
     </thead>
     <tbody>
-      {teams.map((team: Team, index) => 
-        <TeamTableRow key={team.id} team={team} id={index} />
+      {teams.map((team: Team) => 
+        <TeamTableRow key={team.id} team={team} />
       )}
     </tbody>
   </table>

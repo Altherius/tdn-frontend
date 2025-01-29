@@ -1,5 +1,5 @@
 import { Game } from "../../types/game.ts";
-import GameCard from "../menu/gameCard/GameCard.tsx";
+import GameCard from "../gameCard/GameCard.tsx";
 
 import './gameCardGrid.css'
 

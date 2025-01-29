@@ -13,8 +13,8 @@ export default function TournamentTable({tournaments}: {tournaments: Array<Tourn
       </tr>
     </thead>
     <tbody>
-      {tournaments.map((tournament: Tournament, index) => 
-        <TournamentTableRow key={tournament.id} tournament={tournament} id={index} />
+      {tournaments.map((tournament: Tournament) => 
+        <TournamentTableRow key={tournament.id} tournament={tournament} />
       )}
     </tbody>
   </table>

@@ -1,13 +1,16 @@
 import { Team } from "../types/team";
 import { Link } from "react-router-dom";
-import { GameResult } from "../types/last_result.ts";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
+import CountryFlag from "./countryFlag/CountryFlag.tsx";
 
-export default function TeamTableRow({ team, id }: { team: Team; id: number }) {
+export default function TeamTableRow({ team }: { team: Team }) {
   return (
-    <tr className={`tableRow ${id % 2 == 0 ? "tableRow--even" : ""}`}>
+    <tr className="tableRow">
       <td className="tableRow__cell">
-        <Link to={"/teams/" + team.id}><span className={`fi fi-${team.countryCode.toLowerCase()}`}></span>{team.name}</Link>
+        <Link to={"/teams/" + team.id}>
+          {" "}
+          <CountryFlag countryCode={team.countryCode} /> {team.name}
+        </Link>
       </td>
       <td className="tableRow__cell">{team.region}</td>
       <td className="tableRow__cell">{team.rating}</td>
@@ -17,7 +20,9 @@ export default function TeamTableRow({ team, id }: { team: Team; id: number }) {
       </td>
       <td className="tableRow__cell">{team.eloProgression} Elo/match</td>
       <td className="tableRow__cell">
-        {team.lastResults.map((result) => (result.result == GameResult.Win ? "W" : result.result == GameResult.Draw ? "D" : "L"))}
+        {team.lastResults.slice(0,5).map((result) => (
+          <span className={`result result-${result.result}`}></span>
+        ))}
       </td>
     </tr>
   );
