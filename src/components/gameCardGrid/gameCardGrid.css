@@ -1,0 +1,9 @@
+.gameCardGrid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 150px 150px;
+    justify-content: center;
+    min-width: 70%;
+    gap: 50px 35px;
+    flex-wrap: wrap;
+}
