@@ -1,5 +1,6 @@
 import {useState} from "react";
-import Menu from "../../components/Menu.tsx";
+import Menu from "../../components/menu/Menu.tsx";
+
 
 export default function TournamentNew() {
 

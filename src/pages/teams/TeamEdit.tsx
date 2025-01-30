@@ -1,6 +1,8 @@
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {Team} from "../../types/team.ts";
+import Menu from "../../components/menu/Menu.tsx";
+
 
 export default function TeamEdit() {
 
@@ -41,6 +43,8 @@ export default function TeamEdit() {
 
     return (
         <div>
+            <Menu />
+
             <h1>Éditer {team ? team.name : ''}</h1>
 
             <div>
@@ -54,12 +58,14 @@ export default function TeamEdit() {
 
             <div>
                 <label htmlFor="teamRegion">Région</label>
-                <input
-                    type="text"
-                    id={"teamRegion"}
-                    value={teamRegion}
-                    onChange={(e) => setTeamRegion(e.target.value)}
-                />
+                <select onChange={(e) => setTeamRegion(e.target.value)}>
+                    <option value="africa">Afrique</option>
+                    <option value="north_america">Amérique du Nord</option>
+                    <option value="south_america">Amérique du Sud</option>
+                    <option value="asia">Asie</option>
+                    <option value="europe">Europe</option>
+                    <option value="oceania">Océanie</option>
+                </select>
             </div>
 
             <div>

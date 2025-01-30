@@ -1,6 +1,7 @@
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {Tournament} from "../../types/tournament.ts";
+import Menu from "../../components/menu/Menu.tsx";
 
 export default function TournamentEdit() {
 
@@ -43,6 +44,8 @@ export default function TournamentEdit() {
 
     return (
         <div>
+            <Menu />
+
             <h1>Éditer {tournament ? tournament.name : ''}</h1>
 
             <div>
