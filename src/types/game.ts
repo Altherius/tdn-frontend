@@ -1,4 +1,5 @@
 import {Team} from "./team.ts";
+import {Tournament} from "./tournament.ts";
 
 export type Game = {
     id: number;
@@ -7,5 +8,6 @@ export type Game = {
     gameScoreFirst: string,
     gameScoreSecond: string,
     hostingTeam: Team,
-    receivingTeam: Team
+    receivingTeam: Team,
+    tournament: Tournament
 }
