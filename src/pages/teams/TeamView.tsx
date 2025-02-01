@@ -18,6 +18,7 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
+import getFlagEmoji from "../../functions/getFlagEmoji.ts";
 
 
 export default function TeamView() {
@@ -25,6 +26,7 @@ export default function TeamView() {
     const [team, setTeam] = useState<Team>();
     const [lastGames, setLastGames] = useState<Array<Game>>([]);
     const [eloHistory, setEloHistory] = useState<Array<EloHistoryEntry>>([]);
+
 
     ChartJS.register(
         ArcElement,
@@ -60,7 +62,7 @@ export default function TeamView() {
     };
 
     const eloData = {
-        labels: eloHistory.map(() => ''),
+        labels: eloHistory.map((entry) => getFlagEmoji(entry.opposingTeam.countryCode)),
         datasets: [{
             label: 'Elo',
             data: eloHistory.map((entry) => entry.rating),
@@ -69,6 +71,20 @@ export default function TeamView() {
         },
         ],
     }
+
+    const eloOptions = {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: false
+            },
+            labels: {
+                font: {
+                    size: 64
+                }
+            }
+        },
+    };
 
     useEffect(() => {
         fetch("http://localhost/api/teams/" + id)
@@ -99,7 +115,7 @@ export default function TeamView() {
                 <Title>Historique du classement</Title>
 
                 <Pie data={gameData}/>
-                <Line data={eloData}/>
+                <Line data={eloData} options={eloOptions}/>
             </main>
         </>
     );
