@@ -7,8 +7,8 @@ export default function GameTable({games}: { games: Array<Game> }) {
         <thead className='tableHeader'>
         <tr>
             <th className='tableHeader__cell'>Nom</th>
+            <th className='tableHeader__cell'>Tournoi</th>
             <th className='tableHeader__cell'>Résultat</th>
-            <th className='tableHeader__cell'>Détails</th>
         </tr>
         </thead>
         <tbody>

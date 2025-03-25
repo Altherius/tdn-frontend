@@ -1,5 +1,6 @@
 import {useState} from "react";
-import Menu from "../../components/Menu.tsx";
+import Menu from "../../components/menu/Menu.tsx";
+
 
 export default function TournamentNew() {
 
@@ -10,7 +11,7 @@ export default function TournamentNew() {
     const [tournamentEloMultiplier, setTournamentEloMultiplier] = useState<number>(1);
 
     const handleSubmit = () => {
-        fetch('http://localhost/api/tournaments', {
+        fetch(import.meta.env.API_ROOT + '/api/tournaments', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

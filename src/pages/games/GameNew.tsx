@@ -18,13 +18,13 @@ export default function GameNew() {
     const [receivingTeamScore2, setReceivingTeamScore2] = useState<number>(0);
 
     useEffect(() => {
-        fetch('http://localhost/api/tournaments')
+        fetch(import.meta.env.API_ROOT + '/api/tournaments')
             .then(((response) => response.json()))
             .then((json) => setTournaments(json.data));
     }, []);
 
     useEffect(() => {
-        fetch('http://localhost/api/teams')
+        fetch(import.meta.env.API_ROOT + '/api/teams')
             .then(((response) => response.json()))
             .then((json) => {
                 setTeams(json.data)
@@ -32,7 +32,7 @@ export default function GameNew() {
     }, []);
 
     const handleSubmit = () => {
-        fetch('http://localhost/api/games', {
+        fetch(import.meta.env.API_ROOT + '/api/games', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
