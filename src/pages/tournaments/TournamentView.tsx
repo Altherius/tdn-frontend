@@ -12,13 +12,13 @@ export default function TeamView() {
   const [lastGames, setLastGames] = useState<Array<Game>>([]);
 
   useEffect(() => {
-    fetch("http://localhost/api/tournaments/" + id)
+    fetch(import.meta.env.API_ROOT + "/api/tournaments/" + id)
       .then((response) => response.json())
       .then((json) => setTournament(json.data));
   }, [id]);
 
   useEffect(() => {
-    fetch("http://localhost/api/tournaments/" + id + "/games")
+    fetch(import.meta.env.API_ROOT + "/api/tournaments/" + id + "/games")
       .then((response) => response.json())
       .then((json) => setLastGames(json.data));
   }, [id]);

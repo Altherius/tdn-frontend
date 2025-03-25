@@ -14,7 +14,7 @@ export default function TournamentIndex() {
   });
 
   useEffect(() => {
-    fetch("http://localhost/api/tournaments")
+    fetch(import.meta.env.API_ROOT + "/api/tournaments")
       .then((response) => response.json())
       .then((json) => setTournaments(json.data));
   }, []);

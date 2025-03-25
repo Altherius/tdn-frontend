@@ -17,13 +17,13 @@ export default function TeamIndex() {
   });
 
   useEffect(() => {
-    fetch("http://localhost/api/teams")
+    fetch(import.meta.env.API_ROOT + "/api/teams")
       .then((response) => response.json())
       .then((json) => setTeams(json.data));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost/api/games/recent")
+    fetch(import.meta.env.API_ROOT + "/api/games/recent")
       .then((response) => response.json())
       .then((json) => setGames(json.data));
   }, []);

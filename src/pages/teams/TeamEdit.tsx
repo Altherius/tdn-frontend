@@ -14,7 +14,7 @@ export default function TeamEdit() {
     const id = params.id;
 
     useEffect(() => {
-        fetch("http://localhost/api/teams/" + id)
+        fetch(import.meta.env.API_ROOT + "/api/teams/" + id)
             .then((response) => response.json())
             .then((json) => {
                 setTeam(json.data);
@@ -25,7 +25,7 @@ export default function TeamEdit() {
     }, [id]);
 
     const handleSubmit = () => {
-        fetch('http://localhost/api/teams/' + id, {
+        fetch(import.meta.env.API_ROOT + '/api/teams/' + id, {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',
