@@ -19,40 +19,40 @@ const router = createBrowserRouter([
     element: <TeamIndex />
   },
   {
-    path: '/games/:id/edit',
-    element: <GameEdit />
-  },
-  {
     path: '/games/new',
     element: <GameNew />
   },
   {
-    path: '/teams/:id',
-    element: <TeamView />
-  },
-  {
-    path: '/teams/:id/edit',
-    element: <TeamEdit />
+    path: '/games/:id/edit',
+    element: <GameEdit />
   },
   {
     path: '/teams/new',
     element: <TeamNew />
   },
   {
+    path: '/teams/:id/edit',
+    element: <TeamEdit />
+  },
+  {
+    path: '/teams/:id',
+    element: <TeamView />
+  },
+  {
     path: '/tournaments',
     element: <TournamentIndex />
   },
   {
-    path: '/tournaments/:id',
-    element: <TournamentView />
+    path: '/tournaments/new',
+    element: <TournamentNew />
   },
   {
     path: '/tournaments/:id/edit',
     element: <TournamentEdit />
   },
   {
-    path: '/tournaments/new',
-    element: <TournamentNew />
+    path: '/tournaments/:id',
+    element: <TournamentView />
   },
 ]);
 
