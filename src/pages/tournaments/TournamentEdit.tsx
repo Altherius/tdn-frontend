@@ -14,7 +14,7 @@ export default function TournamentEdit() {
     const id = params.id;
 
     useEffect(() => {
-        fetch(import.meta.env.API_ROOT + "/api/tournaments/" + id)
+        fetch(import.meta.env.VITE_API_ROOT + "/api/tournaments/" + id)
             .then((response) => response.json())
             .then((json) => {
                 setTournament(json.data);
@@ -26,7 +26,7 @@ export default function TournamentEdit() {
     }, [id]);
 
     const handleSubmit = () => {
-        fetch(import.meta.env.API_ROOT + '/api/tournaments/' + id, {
+        fetch(import.meta.env.VITE_API_ROOT + '/api/tournaments/' + id, {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',

@@ -87,19 +87,19 @@ export default function TeamView() {
     };
 
     useEffect(() => {
-        fetch(import.meta.env.API_ROOT + "/api/teams/" + id)
+        fetch(import.meta.env.VITE_API_ROOT + "/api/teams/" + id)
             .then((response) => response.json())
             .then((json) => setTeam(json.data));
     }, [id]);
 
     useEffect(() => {
-        fetch(import.meta.env.API_ROOT + "/api/teams/" + id + "/games")
+        fetch(import.meta.env.VITE_API_ROOT + "/api/teams/" + id + "/games")
             .then((response) => response.json())
             .then((json) => setLastGames(json.data));
     }, [id]);
 
     useEffect(() => {
-        fetch(import.meta.env.API_ROOT + "/api/teams/" + id + "/elo-history")
+        fetch(import.meta.env.VITE_API_ROOT + "/api/teams/" + id + "/elo-history")
             .then((response) => response.json())
             .then((json) => setEloHistory(json.data));
     }, [id]);

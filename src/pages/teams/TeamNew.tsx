@@ -8,7 +8,7 @@ export default function TeamNew() {
     const [country, setCountry] = useState<string>('');
 
     const handleSubmit = () => {
-        fetch(import.meta.env.API_ROOT + '/api/teams', {
+        fetch(import.meta.env.VITE_API_ROOT + '/api/teams', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

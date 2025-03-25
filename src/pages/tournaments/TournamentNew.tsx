@@ -11,7 +11,7 @@ export default function TournamentNew() {
     const [tournamentEloMultiplier, setTournamentEloMultiplier] = useState<number>(1);
 
     const handleSubmit = () => {
-        fetch(import.meta.env.API_ROOT + '/api/tournaments', {
+        fetch(import.meta.env.VITE_API_ROOT + '/api/tournaments', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
