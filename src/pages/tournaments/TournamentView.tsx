@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Title from "../../components/Title.tsx";
 import Menu from "../../components/menu/Menu.tsx";
 import { useParams } from "react-router-dom";
-import GameTable from "../../components/GameTable.tsx";
+import GameTable from "../../components/gameTable/GameTable.tsx";
 import { Tournament } from "../../types/tournament.ts";
 import { Game } from "../../types/game.ts";
 

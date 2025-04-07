@@ -84,7 +84,7 @@ main {
   }
   .tableRow__cell {
     text-align: left;
-    padding: 15px;
+    padding: 10px;
     width: fit-content;
     border-left: 2px solid black;
     &:first-child {

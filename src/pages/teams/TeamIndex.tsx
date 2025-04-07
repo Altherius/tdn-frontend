@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Input from "../../components/Input.tsx";
 import { Team } from "../../types/team.ts";
-import TeamTable from "../../components/TeamTable.tsx";
+import TeamTable from "../../components/teamTable/TeamTable.tsx";
 import Title from "../../components/Title.tsx";
 import Menu from "../../components/menu/Menu.tsx";
 import { Game } from "../../types/game.ts";

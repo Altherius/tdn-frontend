@@ -1,7 +1,7 @@
-import { Team } from "../types/team";
+import { Team } from "../../types/team.ts";
 import { Link } from "react-router-dom";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
-import CountryFlag from "./countryFlag/CountryFlag.tsx";
+import CountryFlag from "../countryFlag/CountryFlag.tsx";
 
 export default function TeamTableRow({ team }: { team: Team }) {
   return (

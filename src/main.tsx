@@ -6,7 +6,7 @@ import TeamIndex from './pages/teams/TeamIndex';
 import TeamEdit from './pages/teams/TeamEdit';
 import TournamentIndex from './pages/tournaments/TournamentIndex';
 import TournamentView from './pages/tournaments/TournamentView';
-import TeamView from './pages/teams/TeamView';
+import TeamView from './pages/teams/teamView/TeamView.tsx';
 import TeamNew from "./pages/teams/TeamNew.tsx";
 import TournamentEdit from "./pages/tournaments/TournamentEdit.tsx";
 import TournamentNew from "./pages/tournaments/TournamentNew.tsx";

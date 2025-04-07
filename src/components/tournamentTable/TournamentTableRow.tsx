@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Tournament } from '../types/tournament';
-import CountryFlag from './countryFlag/CountryFlag';
+import { Tournament } from '../../types/tournament';
+import CountryFlag from '../countryFlag/CountryFlag';
 
 export default function TournamentTableRow({tournament}: {tournament: Tournament}) {
     return <tr className="tableRow">

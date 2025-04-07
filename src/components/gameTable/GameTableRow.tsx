@@ -1,4 +1,4 @@
-import { Game } from '../types/game';
+import { Game } from '../../types/game';
 import {Link} from "react-router-dom";
 
 export default function GameTableRow({game}: {game: Game}) {

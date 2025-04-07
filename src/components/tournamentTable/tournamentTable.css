@@ -1,0 +1,6 @@
+.tournamentName{
+    width: 40%;
+}
+.tournamentFirst, .tournamentSecond, .tournamentThird{
+    width: 20%;
+}

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Input from "../../components/Input.tsx";
 import { Tournament } from "../../types/tournament.ts";
 import Title from "../../components/Title.tsx";
-import TournamentTable from "../../components/TournamentTable.tsx";
+import TournamentTable from "../../components/tournamentTable/TournamentTable.tsx";
 import Menu from "../../components/menu/Menu.tsx";
 
 export default function TournamentIndex() {

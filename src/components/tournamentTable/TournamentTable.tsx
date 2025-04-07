@@ -1,4 +1,5 @@
-import { Tournament } from '../types/tournament';
+import './tournamentTable.css'
+import { Tournament } from '../../types/tournament';
 import TournamentTableRow from './TournamentTableRow';
 
 
@@ -6,10 +7,10 @@ export default function TournamentTable({tournaments}: {tournaments: Array<Tourn
     return <table className='tableFrame'>
     <thead className='tableHeader'>
       <tr>
-        <th className='tableHeader__cell'>Nom</th>
-        <th className='tableHeader__cell'>Vainqueur</th>
-        <th className='tableHeader__cell'>Finaliste</th>
-        <th className='tableHeader__cell'>Troisième</th>
+        <th className='tableHeader__cell tournamentName'>Nom</th>
+        <th className='tableHeader__cell tournamentFirst'>Vainqueur</th>
+        <th className='tableHeader__cell tournamentSecond'>Finaliste</th>
+        <th className='tableHeader__cell tournamentThird'>Troisième</th>
       </tr>
     </thead>
     <tbody>
