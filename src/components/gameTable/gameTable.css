@@ -1,0 +1,27 @@
+@import "/src/assets/style/variables.css";
+
+
+.tableHeader__cell.gameTableRow__tournament{
+    width: 45%;
+}
+.tableHeader__cell.gameTableHeader__result{
+    width: 25%;
+}
+
+.tableRow__cell.gameTableRow__result{
+    text-align: center;
+}
+.tableRow.gameTableRow-win{
+    background-color: rgb(92, 122, 56);
+}
+.tableRow.gameTableRow-draw{
+    background-color: rgb(122, 117, 40);
+}
+.tableRow.tableRow.gameTableRow-loss{
+    background-color: rgb(114, 48, 48);
+}
+
+.tableRow .text-bold{
+    font-weight: bold;
+    padding-left: 10px;
+}

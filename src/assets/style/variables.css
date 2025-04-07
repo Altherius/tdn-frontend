@@ -4,8 +4,9 @@
     --color-primary-light: #464E7F;
     --color-secondary: #B1BBFC;
     --color-secondary-dark: #7E87C0;
-    --color-green: #A7CC79;
-    --color-red: #CE6A6A;
-    --color-yellow: #E8D956;
+    --color-green: rgb(167, 204, 121);
+    --color-red: rgb(206, 106, 106);
+    --color-yellow: rgb(232, 217, 86);
+    
     --color-text: #fff;
 }

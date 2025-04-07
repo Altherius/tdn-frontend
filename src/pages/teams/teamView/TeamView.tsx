@@ -39,7 +39,7 @@ export default function TeamView() {
   );
 
   const gameData = {
-    labels: ["Défaites", "Nuls", "Victoires"],
+    labels: ["Victoires", "Nuls", "Défaites"],
     datasets: [
       {
         label: "Nombre de matchs ",
@@ -75,8 +75,7 @@ export default function TeamView() {
   };
 
   const eloData = {
-    // opposingTeam contains null in eloHistory for now
-    //labels: eloHistory.map((entry) => getFlagEmoji(entry.opposingTeam.countryCode)),
+    labels: eloHistory.map((entry) => getFlagEmoji(entry.opposingTeam.countryCode)),
     datasets: [
       {
         label: "Elo",
@@ -127,7 +126,7 @@ export default function TeamView() {
         <Title>{team ? team.name : ""}</Title>
         <p>Classement : {team ? team.rating : 0}</p>
         <Title>Derniers matchs</Title>
-        <GameTable games={lastGames} />
+        <GameTable games={lastGames} team={team?.id as number} />
         <Title>Historique du classement</Title>
         <div className="team__pie">
           <Pie data={gameData} options={pieOptions} />
