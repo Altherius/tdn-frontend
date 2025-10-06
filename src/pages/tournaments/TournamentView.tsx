@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Title from "../../components/Title.tsx";
 import Menu from "../../components/menu/Menu.tsx";
-import { useParams } from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import GameTable from "../../components/gameTable/GameTable.tsx";
 import { Tournament } from "../../types/tournament.ts";
 import { Game } from "../../types/game.ts";
@@ -29,6 +29,10 @@ export default function TeamView() {
       <main>
         <Title>{tournament ? tournament.name : ""}</Title>
         <Title>Derniers matchs</Title>
+        <div>
+          <button className={"big-button"}><Link to={"/games/new?tournament=" + (tournament ? tournament.id : '')}>Créer un match</Link></button>
+          <button className={"big-button"}><Link to={"/tournaments/" + (tournament ? tournament.id : '') + '/edit'}>Éditer le tournoi</Link></button>
+        </div>
         <GameTable games={lastGames} />
       </main>
     </>

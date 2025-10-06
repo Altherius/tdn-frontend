@@ -1,5 +1,6 @@
 import Menu from "../../components/menu/Menu.tsx";
 import {useState} from "react";
+import Title from "../../components/Title.tsx";
 
 export default function TeamNew() {
 
@@ -25,42 +26,44 @@ export default function TeamNew() {
 
 
     return (
-        <div>
+        <>
             <Menu />
-            <h1>Création d'équipe</h1>
+            <main>
+                <Title>Création d'équipe</Title>
 
-            <div>
-                <label htmlFor="teamName">Nom de l'équipe</label>
-                <input
-                    type="text" id={"teamName"}
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
-            </div>
+                <div>
+                    <label htmlFor="teamName">Nom de l'équipe</label>
+                    <input
+                        type="text" id={"teamName"}
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
+                </div>
 
-            <div>
-                <label htmlFor="teamRegion">Région</label>
-                <select value={region} onChange={(e) => setRegion(e.target.value)}>
-                    <option value="africa">Afrique</option>
-                    <option value="north_america">Amérique du Nord</option>
-                    <option value="south_america">Amérique du Sud</option>
-                    <option value="asia">Asie</option>
-                    <option value="europe">Europe</option>
-                    <option value="oceania">Océanie</option>
-                </select>
-            </div>
+                <div>
+                    <label htmlFor="teamRegion">Région</label>
+                    <select value={region} onChange={(e) => setRegion(e.target.value)}>
+                        <option value="africa">Afrique</option>
+                        <option value="north_america">Amérique du Nord</option>
+                        <option value="south_america">Amérique du Sud</option>
+                        <option value="asia">Asie</option>
+                        <option value="europe">Europe</option>
+                        <option value="oceania">Océanie</option>
+                    </select>
+                </div>
 
-            <div>
-                <label htmlFor="teamCountry">Pays</label>
-                <input
-                    type="text"
-                    id={"teamCountry"}
-                    value={country}
-                    onChange={(e) => setCountry(e.target.value)}
-                />
-            </div>
+                <div>
+                    <label htmlFor="teamCountry">Pays</label>
+                    <input
+                        type="text"
+                        id={"teamCountry"}
+                        value={country}
+                        onChange={(e) => setCountry(e.target.value)}
+                    />
+                </div>
 
-            <button onClick={handleSubmit}>Créer l'équipe</button>
-        </div>
+                <button onClick={handleSubmit}>Créer l'équipe</button>
+            </main>
+        </>
     )
 }

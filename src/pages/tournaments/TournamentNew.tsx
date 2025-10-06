@@ -1,5 +1,7 @@
 import {useState} from "react";
 import Menu from "../../components/menu/Menu.tsx";
+import Title from "../../components/Title.tsx";
+import {redirect, redirectDocument, useNavigate} from "react-router-dom";
 
 
 export default function TournamentNew() {
@@ -9,6 +11,7 @@ export default function TournamentNew() {
     const [tournamentMajor, setTournamentMajor] = useState<boolean>(true);
     const [tournamentBalancing, setTournamentBalancing] = useState<boolean>(false);
     const [tournamentEloMultiplier, setTournamentEloMultiplier] = useState<number>(1);
+    const navigate = useNavigate();
 
     const handleSubmit = () => {
         fetch(import.meta.env.VITE_API_ROOT + '/api/tournaments', {
@@ -25,50 +28,53 @@ export default function TournamentNew() {
                 startsAt: tournamentStartsAt
             })
         }).then(((response) => response.json()))
-            .then((json) => console.log(json));
+            .then(
+                () => navigate("/tournaments")
+            );
     };
 
     return (
-        <div>
-
+        <>
             <Menu />
-            <h1>Création de tournoi</h1>
+            <main>
+                <Title>Création de tournoi</Title>
 
-            <div>
-                <label htmlFor="tournamentName">Nom du tournoi</label>
-                <input type="text" id={"tournamentName"} value={tournamentName}
-                       onChange={(e) => setTournamentName(e.target.value)}/>
-            </div>
+                <div>
+                    <label htmlFor="tournamentName">Nom du tournoi</label>
+                    <input type="text" id={"tournamentName"} value={tournamentName}
+                           onChange={(e) => setTournamentName(e.target.value)}/>
+                </div>
 
-            <div>
-                <label htmlFor="tournamentName">Date de début</label>
-                <input type="date" id={"tournamentStartsAt"} value={tournamentStartsAt}
-                       onChange={(e) => setTournamentStartsAt(e.target.value)}/>
-            </div>
+                <div>
+                    <label htmlFor="tournamentName">Date de début</label>
+                    <input type="date" id={"tournamentStartsAt"} value={tournamentStartsAt}
+                           onChange={(e) => setTournamentStartsAt(e.target.value)}/>
+                </div>
 
-            <div>
-                <label htmlFor="tournamentMajor">Tournoi majeur (donne des étoiles)</label>
-                <input type="checkbox" id={"tournamentMajor"} defaultChecked={tournamentMajor}
-                       onChange={() => setTournamentMajor(!tournamentMajor)}/>
-            </div>
+                <div>
+                    <label htmlFor="tournamentMajor">Tournoi majeur (donne des étoiles)</label>
+                    <input type="checkbox" id={"tournamentMajor"} defaultChecked={tournamentMajor}
+                           onChange={() => setTournamentMajor(!tournamentMajor)}/>
+                </div>
 
-            <div>
-                <label htmlFor="tournamentBalance">Tournoi de rééquilibrage</label>
-                <input type="checkbox" id={"tournamentBalance"} defaultChecked={tournamentBalancing}
-                       onChange={() => setTournamentBalancing(!tournamentBalancing)}/>
-            </div>
+                <div>
+                    <label htmlFor="tournamentBalance">Tournoi de rééquilibrage</label>
+                    <input type="checkbox" id={"tournamentBalance"} defaultChecked={tournamentBalancing}
+                           onChange={() => setTournamentBalancing(!tournamentBalancing)}/>
+                </div>
 
-            <div>
-                <label htmlFor="tournamentEloMultiplier">Multiplicateur Elo</label>
-                <input
-                    type="number"
-                    id={"tournamentEloMultiplier"}
-                    value={tournamentEloMultiplier}
-                    onChange={(e) => setTournamentEloMultiplier(parseFloat(e.target.value))}
-                />
-            </div>
+                <div>
+                    <label htmlFor="tournamentEloMultiplier">Multiplicateur Elo</label>
+                    <input
+                        type="number"
+                        id={"tournamentEloMultiplier"}
+                        value={tournamentEloMultiplier}
+                        onChange={(e) => setTournamentEloMultiplier(parseFloat(e.target.value))}
+                    />
+                </div>
 
-            <button onClick={handleSubmit}>Créer le tournoi</button>
-        </div>
+                <button onClick={handleSubmit}>Créer le tournoi</button>
+            </main>
+        </>
     )
 }

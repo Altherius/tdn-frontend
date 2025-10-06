@@ -27,6 +27,40 @@ body {
 }
 
 main {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+select {
+  background-color: var(--color-primary-dark);
+  padding: 10px;
+  margin-left: 20px;
+  border-radius: 5px;
+  border: 0;
+}
+
+input {
+  background-color: var(--color-primary-dark);
+  padding: 10px;
+  margin-left: 20px;
+  border-radius: 5px;
+  border: 0;
+}
+
+button {
+  background-color: var(--color-primary-dark);
+  padding: 10px;
+  margin-left: 20px;
+  border-radius: 5px;
+  border: 0;
+}
+
+.big-button {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+main {
   display: flex;
   justify-content: center;
   background-color: var(--color-primary);
