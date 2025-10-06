@@ -1,7 +1,7 @@
 import { Game } from "../../types/game";
 import { Link } from "react-router-dom";
 
-export default function GameTableRow({ game, team }: { game: Game; team: number }) {
+export default function GameTableRow({ game, team }: { game: Game; team?: number }) {
   var isHost: boolean = false;
   team === game.hostingTeam.id ? (isHost = true) : (isHost = false);
 
