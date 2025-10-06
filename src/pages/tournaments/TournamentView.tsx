@@ -33,7 +33,7 @@ export default function TeamView() {
           <button className={"big-button"}><Link to={"/games/new?tournament=" + (tournament ? tournament.id : '')}>Créer un match</Link></button>
           <button className={"big-button"}><Link to={"/tournaments/" + (tournament ? tournament.id : '') + '/edit'}>Éditer le tournoi</Link></button>
         </div>
-        <GameTable games={lastGames} />
+        <GameTable games={lastGames}/>
       </main>
     </>
   );

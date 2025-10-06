@@ -3,7 +3,7 @@ import {Game} from '../../types/game';
 import GameTableRow from './GameTableRow';
 
 
-export default function GameTable({games, team}: { games: Array<Game>, team: number }) {
+export default function GameTable({games, team}: { games: Array<Game>, team?: number }) {
     return <table className='tableFrame'>
         <thead className='tableHeader'>
         <tr>

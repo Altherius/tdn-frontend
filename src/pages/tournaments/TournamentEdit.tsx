@@ -52,7 +52,7 @@ export default function TournamentEdit() {
 
             <main>
 
-                <Title>Éditer {tournament ? tournament.name : ''}</Title>
+                <Title>{'Éditer' + (tournament ? tournament.name : '')}</Title>
 
                 <div>
                     <label htmlFor="tournamentName">Nom du tournoi</label>

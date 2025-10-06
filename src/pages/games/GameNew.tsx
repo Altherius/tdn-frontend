@@ -7,7 +7,7 @@ import {useNavigate, useSearchParams} from "react-router-dom";
 
 export default function GameNew() {
 
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
     const [tournaments, setTournaments] = useState<Array<Tournament>>([]);
     const [teams, setTeams] = useState<Array<Team>>([]);
 
@@ -60,15 +60,13 @@ export default function GameNew() {
         }).then(((response) => response.json()))
         .then(
             () => {
-                setHostingTeam(null)
-                setReceivingTeam(null)
+                setHostingTeam(undefined)
+                setReceivingTeam(undefined)
 
                 setHostingTeamScore1(0)
                 setHostingTeamScore2(0)
                 setReceivingTeamScore1(0)
                 setReceivingTeamScore2(0)
-                console.log(hostingTeam)
-                console.log(receivingTeam)
             }
         );
     };

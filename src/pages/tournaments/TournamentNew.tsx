@@ -1,7 +1,7 @@
 import {useState} from "react";
 import Menu from "../../components/menu/Menu.tsx";
 import Title from "../../components/Title.tsx";
-import {redirect, redirectDocument, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 
 export default function TournamentNew() {
