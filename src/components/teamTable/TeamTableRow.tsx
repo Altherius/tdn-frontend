@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import CountryFlag from "../countryFlag/CountryFlag.tsx";
 
-export default function TeamTableRow({ key, team }: { key: number, team: Team }) {
+export default function TeamTableRow({team }: { team: Team }) {
   return (
     <tr className="tableRow">
       <td className="tableRow__cell">

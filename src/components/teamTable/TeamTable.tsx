@@ -25,7 +25,7 @@ export default function TeamTable({teams, setTeams}: {teams: Array<Team>; setTea
     </thead>
     <tbody>
       {teams.map((team: Team) => 
-        <TeamTableRow key={team.id} team={team} />
+        <TeamTableRow team={team} />
       )}
     </tbody>
   </table>
