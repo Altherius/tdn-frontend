@@ -17,7 +17,7 @@ export default function TeamIndex() {
   });
 
   useEffect(() => {
-    fetch(import.meta.env.VITE_API_ROOT + "/api/teams")
+    fetch(import.meta.env.VITE_API_ROOT + "/api/teams?sort[0]=rating:desc")
       .then((response) => response.json())
       .then((json) => setTeams(json.data));
   }, []);

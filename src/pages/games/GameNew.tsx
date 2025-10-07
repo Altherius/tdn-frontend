@@ -4,6 +4,7 @@ import {Tournament} from "../../types/tournament.ts";
 import Menu from "../../components/menu/Menu.tsx";
 import Title from "../../components/Title.tsx";
 import {useNavigate, useSearchParams} from "react-router-dom";
+import Select from "react-select";
 
 export default function GameNew() {
 

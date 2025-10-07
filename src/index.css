@@ -132,13 +132,13 @@ main {
       height: 20px;
       border-radius: 10px;
       &.result-win {
-        background-color: var(--color-green);
+        background-color: var(--color-red);
       }
       &.result-draw {
         background-color: var(--color-yellow);
       }
       &.result-loss {
-        background-color: var(--color-red);
+        background-color: var(--color-green);
       }
     }
   }
