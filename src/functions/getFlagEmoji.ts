@@ -4,6 +4,7 @@ export default function getFlagEmoji(countryCode: string) {
         'GB-ENG': '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
         'GB-SCT': '🏴󠁧󠁢󠁳󠁣󠁴󠁿',
         'GB-WLS': '🏴󠁧󠁢󠁷󠁬󠁳󠁿',
+        'GB-NIR': '🏴󠁧󠁢󠁮󠁩󠁲󠁿󠁢󠁷󠁬󠁳󠁿',
     };
 
     // Return special flags directly if they exist
