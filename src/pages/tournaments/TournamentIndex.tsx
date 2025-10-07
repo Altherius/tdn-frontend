@@ -4,6 +4,7 @@ import { Tournament } from "../../types/tournament.ts";
 import Title from "../../components/Title.tsx";
 import TournamentTable from "../../components/tournamentTable/TournamentTable.tsx";
 import Menu from "../../components/menu/Menu.tsx";
+import {Link} from "react-router-dom";
 
 export default function TournamentIndex() {
   const [tournaments, setTournaments] = useState<Array<Tournament>>([]);
@@ -24,6 +25,7 @@ export default function TournamentIndex() {
       <Menu />
       <main>
         <Title>Liste des tournois</Title>
+        <button className={"big-button"}><Link to={"/tournaments/new"}>Créer un tournoi</Link></button>
         <Input value={search} placeholder="Rechercher..." onChange={setSearch} />
         <TournamentTable tournaments={filteredTournaments} />
       </main>

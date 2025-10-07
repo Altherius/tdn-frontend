@@ -2,7 +2,8 @@
 
 .menu {
   position: sticky;
-  top: 0px;
+  top: 0;
+  z-index: 99999;
   
   background-color: var(--color-primary-light);
   border-bottom: 1px solid black;
