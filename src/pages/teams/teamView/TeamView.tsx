@@ -108,7 +108,7 @@ export default function TeamView() {
   }, [id]);
 
   useEffect(() => {
-    fetch(import.meta.env.VITE_API_ROOT + "/api/teams/" + id + "/games")
+    fetch(import.meta.env.VITE_API_ROOT + "/api/teams/" + id + "/games?sort[0]=id:desc")
       .then((response) => response.json())
       .then((json) => setLastGames(json.data));
   }, [id]);
