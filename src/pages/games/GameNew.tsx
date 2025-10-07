@@ -35,7 +35,7 @@ export default function GameNew() {
     }, []);
 
     useEffect(() => {
-        fetch(import.meta.env.VITE_API_ROOT + '/api/teams')
+        fetch(import.meta.env.VITE_API_ROOT + '/api/teams?sort[0]=name:asc')
             .then(((response) => response.json()))
             .then((json) => {
                 setTeams(json.data)
